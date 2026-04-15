@@ -1,25 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="hr">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSFLOAT</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body{background:#1a1d29;color:white;font-family:Arial;text-align:center;margin:0;padding:50px;font-size:24px}
-        .logo{font-size:80px;font-style:italic;background:#2d3748;width:120px;height:120px;line-height:120px;border-radius:15px;margin:0 auto 30px}
-        h1{font-style:italic;margin-bottom:50px;font-size:56px}
-        button{background:#161922;color:white;border:2px solid #555;padding:25px 60px;margin:15px;font-size:28px;cursor:pointer;display:block;width:280px;margin:15px auto}
-        button:hover{background:#252a3d}
-        a{color:white;text-decoration:none}
+        body {
+            background: #1a1d29;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 50px;
+        }
+        .logo {
+            width: 120px;
+            height: 120px;
+            background: #2d3748;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            font-style: italic;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-style: italic;
+            margin-bottom: 40px;
+            font-size: 3rem;
+        }
+        .btn-custom {
+            background: #161922;
+            color: white;
+            border: 2px solid #555;
+            padding: 15px 50px;
+            font-size: 1.2rem;
+            width: 280px;
+            margin: 10px;
+            transition: all 0.3s ease;
+        }
+        .btn-custom:hover {
+            background: #252a3d;
+            border-color: #777;
+            transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
     </style>
 </head>
 <body>
 
-<div class="logo">f</div>
-<h1>CSFLOAT</h1>
+<div class="text-center">
+    <div class="logo mx-auto">f</div>
+    <h1>CSFLOAT</h1>
+    
+    <a href="market.html" class="btn btn-custom d-block">MARKET</a>
+    <a href="database.html" class="btn btn-custom d-block">DATABASE</a>
+    <a href="loadout.html" class="btn btn-custom d-block">LOADOUT</a>
+</div>
 
-<a href="market.html"><button>MARKET</button></a>
-<a href="database.html"><button>DATABASE</button></a>
-<a href="loadout.html"><button>LOADOUT</button></a>
-
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
