@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Database</title>
+    <title>Market</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -11,59 +11,201 @@
             color: white;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             padding: 40px;
-            font-size: 18px;
-        }
-        .back-link {
-            color: white;
-            text-decoration: none;
-            font-size: 1.2rem;
-            display: inline-block;
-            margin-bottom: 30px;
-        }
-        .back-link:hover {
-            color: #aaa;
+            font-size: 16px;
         }
         h1 {
             font-style: italic;
             margin-bottom: 30px;
         }
-        .item-card {
+        .market-item {
             background: #161922;
             padding: 20px;
-            margin: 15px 0;
             border-radius: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 1.1rem;
             transition: all 0.3s ease;
+            cursor: pointer;
         }
-        .item-card:hover {
+        .market-item:hover {
             background: #252a3d;
-            transform: translateX(5px);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+        .market-item img {
+            width: 100%;
+            height: 140px;
+            background: #444;
+            border-radius: 10px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        .item-name {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .modal-content {
+            background: #161922;
+            color: white;
+            border: 1px solid #252a3d;
+        }
+        .modal-header { border-bottom: 1px solid #252a3d; }
+        .modal-footer { border-top: 1px solid #252a3d; }
+        .modal-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            background: #444;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <a href="index.html" class="back-link">← DATABASE</a>
-    <h1>Database</h1>
-    
-    <div class="item-card">
-        <span>#1 ★ Karambit Vanilla</span>
-        <span class="text-muted">| Float 0</span>
+    <a href="index.html" class="btn btn-outline-light btn-sm mt-3 mb-4">← MARKET</a>
+    <h1>Market</h1>
+
+    <div class="input-group mb-4">
+        <span class="input-group-text bg-dark border-secondary text-white">🔍</span>
+        <input type="text" class="form-control bg-dark border-secondary text-white" placeholder="Pretraži market..." id="searchInput" onkeyup="filterItems()">
     </div>
-    <div class="item-card">
-        <span>#2 MAC-10 Bronzer</span>
-        <span class="text-muted">| Float 0.001</span>
-    </div>
-    <div class="item-card">
-        <span>#3 AUG Eye of Zape</span>
-        <span class="text-muted">| Float 0.002</span>
+
+    <div class="row g-4" id="marketGrid">
+
+        <div class="col-4">
+            <div class="market-item" onclick="openModal('AK-47 | Asiimov', '250€', 'kalas1.jfif')">
+                <img src="kalas1.jfif" alt="skin1">
+                <div class="item-name">AK-47 | Asiimov</div>
+                <span class="badge bg-success fs-6">250€</span>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="market-item" onclick="openModal('M4A4 | Howl', '1200€', 'emka.png')">
+                <img src="emka.png" alt="skin2">
+                <div class="item-name">M4A4 | Howl</div>
+                <span class="badge bg-success fs-6">1200€</span>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="market-item" onclick="openModal('AWP | Gungnir', '850€', 'AWP.png')">
+                <img src="AWP.png" alt="skin3">
+                <div class="item-name">AWP | Gungnir</div>
+                <span class="badge bg-success fs-6">850€</span>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="market-item" onclick="openModal('Skin 4', '000€', 'skin4.png')">
+                <img src="skin4.png" alt="skin4">
+                <div class="item-name">Skin 4</div>
+                <span class="badge bg-success fs-6">000€</span>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="market-item" onclick="openModal('Skin 5', '000€', 'skin5.png')">
+                <img src="skin5.png" alt="skin5">
+                <div class="item-name">Skin 5</div>
+                <span class="badge bg-success fs-6">000€</span>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="market-item" onclick="openModal('Skin 6', '000€', 'skin6.png')">
+                <img src="skin6.png" alt="skin6">
+                <div class="item-name">Skin 6</div>
+                <span class="badge bg-success fs-6">000€</span>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="market-item" onclick="openModal('Skin 7', '000€', 'skin7.png')">
+                <img src="skin7.png" alt="skin7">
+                <div class="item-name">Skin 7</div>
+                <span class="badge bg-success fs-6">000€</span>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="market-item" onclick="openModal('Skin 8', '000€', 'skin8.png')">
+                <img src="skin8.png" alt="skin8">
+                <div class="item-name">Skin 8</div>
+                <span class="badge bg-success fs-6">000€</span>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="market-item" onclick="openModal('Skin 9', '000€', 'skin9.png')">
+                <img src="skin9.png" alt="skin9">
+                <div class="item-name">Skin 9</div>
+                <span class="badge bg-success fs-6">000€</span>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="market-item" onclick="openModal('Skin 10', '000€', 'skin10.png')">
+                <img src="skin10.png" alt="skin10">
+                <div class="item-name">Skin 10</div>
+                <span class="badge bg-success fs-6">000€</span>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="market-item" onclick="openModal('Skin 11', '000€', 'skin11.png')">
+                <img src="skin11.png" alt="skin11">
+                <div class="item-name">Skin 11</div>
+                <span class="badge bg-success fs-6">000€</span>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="market-item" onclick="openModal('Skin 12', '000€', 'skin12.png')">
+                <img src="skin12.png" alt="skin12">
+                <div class="item-name">Skin 12</div>
+                <span class="badge bg-success fs-6">000€</span>
+            </div>
+        </div>
+
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+<!-- Modal -->
+<div class="modal fade" id="skinModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle"></h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <img id="modalImg" src="" alt="skin" class="modal-img">
+                <p class="mb-1">Cijena: <span class="badge bg-success fs-6" id="modalPrice"></span></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zatvori</button>
+                <button type="button" class="btn btn-success">Kupi</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    function openModal(name, price, img) {
+        document.getElementById('modalTitle').innerText = name;
+        document.getElementById('modalPrice').innerText = price;
+        document.getElementById('modalImg').src = img;
+        new bootstrap.Modal(document.getElementById('skinModal')).show();
+    }
+
+    function filterItems() {
+        const input = document.getElementById('searchInput').value.toLowerCase();
+        document.querySelectorAll('#marketGrid .col-4').forEach(col => {
+            col.style.display = col.innerText.toLowerCase().includes(input) ? '' : 'none';
+        });
+    }
+</script>
 </body>
 </html>
