@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: #1a1d29;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 40px;
+            font-size: 16px;
+        }
+        h1 {
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+        .carousel {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .carousel-item img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+            background: #2d3748;
+        }
+        .carousel-caption {
+            background: rgba(0,0,0,0.6);
+            border-radius: 10px;
+            padding: 10px 20px;
+            bottom: 20px;
+        }
+        .carousel-caption h5 {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 3px;
+        }
+        .carousel-caption p {
+            color: #4ade80;
+            font-size: 1.1rem;
+            margin: 0;
+        }
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            filter: invert(1);
+        }
+        .carousel-indicators [data-bs-target] {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a href="index.html" class="btn btn-outline-light btn-sm mt-3 mb-4">← KATALOG</a>
+    <h1>Katalog</h1>
+
+    <div id="katalogCarousel" class="carousel slide" data-bs-ride="carousel">
+
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#katalogCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#katalogCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#katalogCarousel" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#katalogCarousel" data-bs-slide-to="3"></button>
+            <button type="button" data-bs-target="#katalogCarousel" data-bs-slide-to="4"></button>
+            <button type="button" data-bs-target="#katalogCarousel" data-bs-slide-to="5"></button>
+            <button type="button" data-bs-target="#katalogCarousel" data-bs-slide-to="6"></button>
+            <button type="button" data-bs-target="#katalogCarousel" data-bs-slide-to="7"></button>
+            <button type="button" data-bs-target="#katalogCarousel" data-bs-slide-to="8"></button>
+            <button type="button" data-bs-target="#katalogCarousel" data-bs-slide-to="9"></button>
+        </div>
+
+        <div class="carousel-inner">
+
+            <div class="carousel-item active">
+                <img src="slika1.png" alt="skin1">
+                <div class="carousel-caption">
+                    <h5>Skin 1</h5>
+                    <p>000€</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="slika2.png" alt="skin2">
+                <div class="carousel-caption">
+                    <h5>Skin 2</h5>
+                    <p>000€</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="slika3.png" alt="skin3">
+                <div class="carousel-caption">
+                    <h5>Skin 3</h5>
+                    <p>000€</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="slika4.png" alt="skin4">
+                <div class="carousel-caption">
+                    <h5>Skin 4</h5>
+                    <p>000€</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="slika5.png" alt="skin5">
+                <div class="carousel-caption">
+                    <h5>Skin 5</h5>
+                    <p>000€</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="slika6.png" alt="skin6">
+                <div class="carousel-caption">
+                    <h5>Skin 6</h5>
+                    <p>000€</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="slika7.png" alt="skin7">
+                <div class="carousel-caption">
+                    <h5>Skin 7</h5>
+                    <p>000€</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="slika8.png" alt="skin8">
+                <div class="carousel-caption">
+                    <h5>Skin 8</h5>
+                    <p>000€</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="slika9.png" alt="skin9">
+                <div class="carousel-caption">
+                    <h5>Skin 9</h5>
+                    <p>000€</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="slika10.png" alt="skin10">
+                <div class="carousel-caption">
+                    <h5>Skin 10</h5>
+                    <p>000€</p>
+                </div>
+            </div>
+
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#katalogCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#katalogCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
