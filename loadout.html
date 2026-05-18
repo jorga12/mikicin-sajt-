@@ -13,29 +13,17 @@
             padding: 40px;
             font-size: 18px;
         }
-        .back-link {
-            color: white;
-            text-decoration: none;
-            font-size: 1.2rem;
-            display: inline-block;
-            margin-bottom: 30px;
-        }
-        .back-link:hover {
-            color: #aaa;
-        }
         h1 {
             font-style: italic;
             margin-bottom: 30px;
         }
-        .weapon-card {
+        .loadout-row {
             background: #161922;
-            padding: 25px;
-            margin: 15px 0;
             border-radius: 10px;
-            font-size: 1.2rem;
+            padding: 18px 25px;
             transition: all 0.3s ease;
         }
-        .weapon-card:hover {
+        .loadout-row:hover {
             background: #252a3d;
             transform: scale(1.02);
         }
@@ -44,15 +32,89 @@
 <body>
 
 <div class="container">
-    <a href="index.html" class="back-link">← LOADOUT</a>
+    <a href="index.html" class="btn btn-outline-light btn-sm mt-3 mb-4">← LOADOUT</a>
     <h1>Loadout</h1>
-    
-    <div class="weapon-card">AK-47 | Case Hardened</div>
-    <div class="weapon-card">AWP | Dragon Lore</div>
-    <div class="weapon-card">USP | Printstream</div>
-    <div class="weapon-card">★ Karambit Vanilla</div>
+
+    <div class="input-group mb-4">
+        <span class="input-group-text bg-dark border-secondary text-white">🔍</span>
+        <input type="text" class="form-control bg-dark border-secondary text-white" placeholder="Pretraži loadout..." id="searchInput" onkeyup="filterRows()">
+    </div>
+
+    <div class="d-flex flex-column gap-3" id="loadoutList">
+
+        <div class="row loadout-row align-items-center" data-bs-toggle="tooltip" data-bs-placement="right" title="Rifle">
+            <div class="col-4">AK-47</div>
+            <div class="col-4">Case Hardened</div>
+            <div class="col-4"><span class="badge bg-warning text-dark">Field-Tested</span></div>
+        </div>
+
+        <div class="row loadout-row align-items-center" data-bs-toggle="tooltip" data-bs-placement="right" title="Rifle">
+            <div class="col-4">M4A4</div>
+            <div class="col-4">Howl</div>
+            <div class="col-4"><span class="badge bg-success">Minimal Wear</span></div>
+        </div>
+
+        <div class="row loadout-row align-items-center" data-bs-toggle="tooltip" data-bs-placement="right" title="Sniper">
+            <div class="col-4">AWP</div>
+            <div class="col-4">Dragon Lore</div>
+            <div class="col-4"><span class="badge bg-success">Factory New</span></div>
+        </div>
+
+        <div class="row loadout-row align-items-center" data-bs-toggle="tooltip" data-bs-placement="right" title="Pistol">
+            <div class="col-4">USP-S</div>
+            <div class="col-4">Printstream</div>
+            <div class="col-4"><span class="badge bg-success">Factory New</span></div>
+        </div>
+
+        <div class="row loadout-row align-items-center" data-bs-toggle="tooltip" data-bs-placement="right" title="Pistol">
+            <div class="col-4">Glock-18</div>
+            <div class="col-4">Fade</div>
+            <div class="col-4"><span class="badge bg-success">Factory New</span></div>
+        </div>
+
+        <div class="row loadout-row align-items-center" data-bs-toggle="tooltip" data-bs-placement="right" title="Pistol">
+            <div class="col-4">Desert Eagle</div>
+            <div class="col-4">Blaze</div>
+            <div class="col-4"><span class="badge bg-success">Factory New</span></div>
+        </div>
+
+        <div class="row loadout-row align-items-center" data-bs-toggle="tooltip" data-bs-placement="right" title="Knife">
+            <div class="col-4">★ Karambit</div>
+            <div class="col-4">Vanilla</div>
+            <div class="col-4"><span class="badge bg-success">Factory New</span></div>
+        </div>
+
+        <div class="row loadout-row align-items-center" data-bs-toggle="tooltip" data-bs-placement="right" title="Knife">
+            <div class="col-4">★ Butterfly Knife</div>
+            <div class="col-4">Fade</div>
+            <div class="col-4"><span class="badge bg-success">Factory New</span></div>
+        </div>
+
+        <div class="row loadout-row align-items-center" data-bs-toggle="tooltip" data-bs-placement="right" title="Gloves">
+            <div class="col-4">★ Sport Gloves</div>
+            <div class="col-4">Pandora's Box</div>
+            <div class="col-4"><span class="badge bg-warning text-dark">Field-Tested</span></div>
+        </div>
+
+        <div class="row loadout-row align-items-center" data-bs-toggle="tooltip" data-bs-placement="right" title="Gloves">
+            <div class="col-4">★ Driver Gloves</div>
+            <div class="col-4">King Snake</div>
+            <div class="col-4"><span class="badge bg-success">Minimal Wear</span></div>
+        </div>
+
+    </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));
+
+    function filterRows() {
+        const input = document.getElementById('searchInput').value.toLowerCase();
+        document.querySelectorAll('#loadoutList .loadout-row').forEach(row => {
+            row.parentElement.style.display = row.innerText.toLowerCase().includes(input) ? '' : 'none';
+        });
+    }
+</script>
 </body>
 </html>
